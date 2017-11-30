@@ -1,7 +1,7 @@
 window.onload = function() {
   //drawing canvas setup
   var canvas = document.getElementById('canvas');
-  var canCtx = canvas.getContext('2D');
+  var canCtx = canvas.getContext('2d');
   
   var ctx = new AudioContext();
   var audio = document.getElementById('myAudio');
@@ -21,14 +21,15 @@ window.onload = function() {
      requestAnimationFrame(renderFrame);
      // update data in frequencyData
      analyser.getByteFrequencyData(frequencyData);
-     // render frame based on values in frequencyData
-     image(frequencyData, canCtx);
+     // render frame based on values in frequencyData 
+    //visualization
+      canCtx.clearRect(0, 0, 800, 400);
+      canCtx.fillStyle = "#FF0000";
+      canCtx.fillRect(0,0,10,frequencyData[0]);
+      for(var i = 0 ; i < analyser.frequencyBinCount;i){}
   }
   audio.play();
   renderFrame();
 };
 
-function image(data, ctx){
-  ctx.clearRect(0, 0, 800, 400);
-  
-}
+ 
