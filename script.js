@@ -26,7 +26,7 @@ window.onload = function() {
       canCtx.clearRect(0, 0, 800, 400);
       canCtx.fillStyle = "#FF0000";
       for(var i = 0 ; i < analyser.frequencyBinCount;i++){
-        canCtx.fillRect((i*10),400,(10),(frequencyData[i]));
+        canCtx.fillRect((i*10),(400-frequencyData[i]),(10),frequencyData[i]);
         
       }
       
