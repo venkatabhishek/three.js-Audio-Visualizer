@@ -14,7 +14,7 @@ window.onload = function() {
  
   // frequencyBinCount tells you how many values you'll receive from the analyser
   var frequencyData = new Uint8Array(analyser.frequencyBinCount);
- 
+ console.log(analyser.frequencyBinCount);
   // we're ready to receive some data!
   // loop
   function renderFrame() {
@@ -25,8 +25,11 @@ window.onload = function() {
     //visualization
       canCtx.clearRect(0, 0, 800, 400);
       canCtx.fillStyle = "#FF0000";
-      canCtx.fillRect(0,0,10,frequencyData[0]);
-      for(var i = 0 ; i < analyser.frequencyBinCount;i){}
+      for(var i = 0 ; i < analyser.frequencyBinCount;i++){
+        canCtx.fillRect((i*10),400,(10),(frequencyData[i]));
+        
+      }
+      
   }
   audio.play();
   renderFrame();
