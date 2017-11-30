@@ -24,7 +24,10 @@ window.onload = function() {
      // render frame based on values in frequencyData 
     //visualization
       canCtx.clearRect(0, 0, 800, 400);
-      canCtx.fillStyle = "#FF0000";
+      var color = '#' + (function co(lor){   return (lor +=
+  [0,1,2,3,4,5,6,7,8,9,'a','b','c','d','e','f'][Math.floor(Math.random()*16)])
+  && (lor.length == 6) ?  lor : co(lor); })('');
+      canCtx.fillStyle = color;
       for(var i = 0 ; i < analyser.frequencyBinCount;i++){
         canCtx.fillRect((i*10),(400-frequencyData[i]),(10),frequencyData[i]);
         
