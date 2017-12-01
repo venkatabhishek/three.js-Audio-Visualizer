@@ -23,15 +23,14 @@ window.onload = function() {
     renderer.setSize(window.innerWidth, window.innerHeight);
 
     document.body.appendChild(renderer.domElement);
-var colors = ["green","blue","yellow","red"];
+var colors = ["0x00ff00","0x00","yellow","0xff0000"];
   //draw lines from frequency magnitudes
     function geo(arr) {
       for(var q = 0; q < 25; q++){
+        color = colors[q%4];
         var geometry = new THREE.BoxBufferGeometry( 10, arr[q], 10 );
 var material = new THREE.MeshBasicMaterial( {color: 0x0000ff} );
-        for ( var i = 0; i < 5; i ++ ) {
-geometry.faces[ i ].color.setHex( Math.random() * 0xffffff );
-}
+      
 var cube = new THREE.Mesh( geometry, material );
 
       scene.add(cube);
