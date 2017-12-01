@@ -23,15 +23,20 @@ window.onload = function() {
     renderer.setSize(window.innerWidth, window.innerHeight);
 
     document.body.appendChild(renderer.domElement);
-
+var colors = ["green","blue","yellow","red"];
   //draw lines from frequency magnitudes
     function geo(arr) {
-        var geometry = new THREE.BoxBufferGeometry( 5, arr[0], 5 );
-var material = new THREE.MeshBasicMaterial( {color: 0x00ff00} );
+      for(var q = 0; q < 25; q++){
+        var geometry = new THREE.BoxBufferGeometry( 10, arr[q], 10 );
+var material = new THREE.MeshBasicMaterial( {color: 0x0000ff} );
+        for ( var i = 0; i < 5; i ++ ) {
+geometry.faces[ i ].color.setHex( Math.random() * 0xffffff );
+}
 var cube = new THREE.Mesh( geometry, material );
 
-    
-      
+      scene.add(cube);
+        cube.position.set(0, 0, q*10);
+      }
     }
 
     var controls = new THREE.TrackballControls(camera);
