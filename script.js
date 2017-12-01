@@ -1,7 +1,7 @@
 window.onload = function() {
   //drawing canvas setup
-  var canvas = document.getElementById('canvas');
-  var canCtx = canvas.getContext('2d');
+  //var canvas = document.getElementById('canvas');
+ // var canCtx = canvas.getContext('2d');
   
   var ctx = new AudioContext();
   var audio = document.getElementById('myAudio');
@@ -14,8 +14,8 @@ window.onload = function() {
  //threejs stuff
    var scene = new THREE.Scene();
 
-var camera = new THREE.PerspectiveCamera( 10, window.innerWidth / window.innerHeight, 1, 2000 );
-camera.position.set(0, 0, 1000);
+var camera = new THREE.PerspectiveCamera( 10, window.innerWidth / window.innerHeight, 0.1, 8000 );
+camera.position.set(1000, 0, 1000);
 camera.lookAt( scene.position );
 
 var renderer = new THREE.WebGLRenderer({
@@ -30,10 +30,11 @@ function geo(arr){
 var material = new THREE.LineBasicMaterial({ color: 0x0000ff });
 var geometry = new THREE.Geometry();
   for(var p = 0 ; p < arr.length;p++){
-    geometry.vertices.push(new THREE.Vector3(0, arr[p], 0));    
+    geometry.vertices.push(new THREE.Vector3(p, arr[p], -10));    
   }
 
 var line = new THREE.Line(geometry, material);
+  line.scale.set( 2, 2, 2 );
   
 scene.add(line);
 }
@@ -48,6 +49,7 @@ controls.staticMoving = false;
 controls.dynamicDampingFactor = 0.2;
 
 function renderPhone(arr) {
+  
   geo(arr);
   renderer.render( scene, camera );
 }
@@ -79,6 +81,9 @@ controls.addEventListener( 'change', renderPhone );
     //hmtl - <canvas id="canvas" width="1024" height="400px"></canvas>
     
     //threejs visualizations
+    while(scene.children.length > 0){ 
+    scene.remove(scene.children[0]); 
+  }
    renderPhone(frequencyData);
   controls.update();
 
