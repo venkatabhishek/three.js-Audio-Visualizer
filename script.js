@@ -15,7 +15,7 @@ window.onload = function() {
    var scene = new THREE.Scene();
 
 var camera = new THREE.PerspectiveCamera( 10, window.innerWidth / window.innerHeight, 0.1, 80000 );
-camera.position.set(4000, 0, 4000);
+camera.position.set(3000, 10, 4000);
 camera.lookAt( scene.position );
 
 var renderer = new THREE.WebGLRenderer({
@@ -29,12 +29,13 @@ document.body.appendChild( renderer.domElement );
 function geo(arr){
 var material = new THREE.LineBasicMaterial({ color: 0x0000ff });
 var geometry = new THREE.Geometry();
+
   for(var p = 0 ; p < arr.length;p++){
     geometry.vertices.push(new THREE.Vector3(p, arr[p], -10));    
   }
-
+geometry.applyMatrix( new THREE.Matrix4().makeTranslation(0, 0, 120) );
 var line = new THREE.Line(geometry, material);
-  line.scale.set( 2, 2, 2 );
+  line.scale.set( 10, 3, 3 );
   
 scene.add(line);
 }
