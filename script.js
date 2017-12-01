@@ -24,20 +24,14 @@ window.onload = function() {
 
     document.body.appendChild(renderer.domElement);
 
+  //draw lines from frequency magnitudes
     function geo(arr) {
-        var material = new THREE.LineBasicMaterial({
-            color: 0x0000ff
-        });
-        var geometry = new THREE.Geometry();
+        var geometry = new THREE.BoxBufferGeometry( 5, arr[0], 5 );
+var material = new THREE.MeshBasicMaterial( {color: 0x00ff00} );
+var cube = new THREE.Mesh( geometry, material );
 
-        for (var p = 0; p < arr.length; p++) {
-            geometry.vertices.push(new THREE.Vector3(p, arr[p], -10));
-        }
-        geometry.applyMatrix(new THREE.Matrix4().makeTranslation(0, 0, 120));
-        var line = new THREE.Line(geometry, material);
-        line.scale.set(10, 3, 3);
-
-        scene.add(line);
+    
+      
     }
 
     var controls = new THREE.TrackballControls(camera);
