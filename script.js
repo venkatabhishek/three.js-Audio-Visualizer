@@ -11,7 +11,49 @@ window.onload = function() {
   // we have to connect the MediaElementSource with the analyser 
   audioSrc.connect(analyser);
   // we could configure the analyser: e.g. analyser.fftSize (for further infos read the spec)
+ //threejs stuff
+   var scene = new THREE.Scene();
+
+var camera = new THREE.PerspectiveCamera( 10, window.innerWidth / window.innerHeight, 1, 2000 );
+camera.position.set(0, 0, 1000);
+camera.lookAt( scene.position );
+
+var renderer = new THREE.WebGLRenderer({
+  alpha: true,
+	antialias: true
+});
+renderer.setPixelRatio( window.devicePixelRatio );
+renderer.setSize( window.innerWidth, window.innerHeight );
  
+document.body.appendChild( renderer.domElement ); 
+function geo(arr){
+var material = new THREE.LineBasicMaterial({ color: 0x0000ff });
+var geometry = new THREE.Geometry();
+  for(var p = 0 ; p < arr.length;p++){
+    geometry.vertices.push(new THREE.Vector3(0, arr[p], 0));    
+  }
+
+var line = new THREE.Line(geometry, material);
+  
+scene.add(line);
+}
+
+var controls = new THREE.TrackballControls( camera );
+controls.rotateSpeed = 5.0;
+controls.zoomSpeed = 3.2;
+controls.panSpeed = 0.8;
+controls.noZoom = false;
+controls.noPan = true;
+controls.staticMoving = false;
+controls.dynamicDampingFactor = 0.2;
+
+function renderPhone(arr) {
+  geo(arr);
+  renderer.render( scene, camera );
+}
+
+controls.addEventListener( 'change', renderPhone );
+
   // frequencyBinCount tells you how many values you'll receive from the analyser
   var frequencyData = new Uint8Array(analyser.frequencyBinCount);
  console.log(analyser.frequencyBinCount);
@@ -19,21 +61,29 @@ window.onload = function() {
   // loop
   
   //visual options
-  var colors = ["green","red","blue","yellow"];
+  //var colors = ["green","red","blue","yellow"];
   function renderFrame() {
      requestAnimationFrame(renderFrame);
      // update data in frequencyData
      analyser.getByteFrequencyData(frequencyData);
      // render frame based on values in frequencyData 
-    //visualization
-      canCtx.clearRect(0, 0, 1024, 400);
-      var color = Math.floor(Math.random()*4);
-      canCtx.fillStyle = colors[color];
-      for(var i = 0 ; i < analyser.frequencyBinCount;i++){
+    //visualization for bar graph
+      //canCtx.clearRect(0, 0, 1024, 400);
+      //var color = Math.floor(Math.random()*4);
+      //canCtx.fillStyle = colors[color];
+      //for(var i = 0 ; i < analyser.frequencyBinCount;i++){
         
-        canCtx.fillRect((i*10),(400-frequencyData[i]),(10),frequencyData[i]);
+       // canCtx.fillRect((i*10),(400-frequencyData[i]),(10),frequencyData[i]);
         
-      }
+      //}
+    //hmtl - <canvas id="canvas" width="1024" height="400px"></canvas>
+    
+    //threejs visualizations
+   renderPhone(frequencyData);
+  controls.update();
+
+
+
       
   }
   audio.play();
