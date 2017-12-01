@@ -14,8 +14,8 @@ window.onload = function() {
  //threejs stuff
    var scene = new THREE.Scene();
 
-var camera = new THREE.PerspectiveCamera( 10, window.innerWidth / window.innerHeight, 0.1, 8000 );
-camera.position.set(1000, 0, 1000);
+var camera = new THREE.PerspectiveCamera( 10, window.innerWidth / window.innerHeight, 0.1, 80000 );
+camera.position.set(4000, 0, 4000);
 camera.lookAt( scene.position );
 
 var renderer = new THREE.WebGLRenderer({
