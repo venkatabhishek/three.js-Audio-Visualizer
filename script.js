@@ -12,7 +12,7 @@ window.onload = function() {
     var scene = new THREE.Scene();
 
     var camera = new THREE.PerspectiveCamera(10, window.innerWidth / window.innerHeight, 0.1, 80000);
-    camera.position.set(0, 10, 1000);
+    camera.position.set(0, 25, 2000);
 
     camera.lookAt(scene.position);
 
@@ -106,7 +106,7 @@ window.onload = function() {
 
         for (var i = 0; i < arr.length; i++) {
             var r = arr[i] + 10;
-            var theta = (2 * Math.PI / 1024) * i * 4;
+            var theta = (2 * Math.PI / 1024) * i * 11;
 
             geometry.vertices.push(
                 new THREE.Vector3(r * Math.cos(theta), r * Math.sin(theta), 4)
@@ -115,7 +115,7 @@ window.onload = function() {
         }
 
         var steps = 0.09;
-        var phase = 1.9;
+        var phase = 1.7;
         var coloredLine = getColoredBufferLine(steps, phase, geometry);
         scene.add(coloredLine);
 

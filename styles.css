@@ -2,7 +2,7 @@ canvas{
   background-color: black;
   width: 100vw;
   height: 100vh;
-  position: fixed;
+  
     
 }
 audio{
@@ -10,9 +10,13 @@ audio{
 }
 html{
   overflow: hidden;
-  color: white;
 }
 * {
   margin: 0;
   padding: 0;
+  position: fixed;
+   color: white;
+}
+h1{
+ z-index:1;
 }
