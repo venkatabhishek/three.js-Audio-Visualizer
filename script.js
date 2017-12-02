@@ -34,11 +34,20 @@ var geometry = new THREE.Geometry();
       for(var i = 0 ; i < arr.length; i++){
        var r = arr[i];
         var theta = (2*Math.PI/1024)*i;
-        var x = r*Math.cos(theta);
+          var x = r*Math.cos(theta);
         var y = r*Math.sin(theta);
+        if(i%4 == 0){
+          var r = arr[i/4];
 geometry.vertices.push(
-	new THREE.Vector3( x, y, 1 )
-); 
+	new THREE.Vector3( x, 1, y )
+);
+           }else{
+           
+geometry.vertices.push(
+	new THREE.Vector3( Math.cos(i), Math.sin(i), 1 )
+);
+           }
+     
       }
 
 var line = new THREE.Line( geometry, material );
