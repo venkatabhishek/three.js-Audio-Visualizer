@@ -17,3 +17,12 @@ html{
   position: fixed;
    color: white;
 }
+h1{
+  z-index:1;
+  font-family: 'Quicksand', sans-serif;
+  margin-left: 40px;
+  margin-top: 20px;
+}
+button{
+  z-index: 2;
+}
