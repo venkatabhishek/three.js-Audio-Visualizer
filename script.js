@@ -31,19 +31,18 @@ window.onload = function() {
 });
 
 var geometry = new THREE.Geometry();
-      for(var i = 0 ; i < arr.length; i++){
+      for(var i = 0 ; i < 360; i++){
        var r = arr[i];
         var theta = (2*Math.PI/1024)*i;
           var x = Math.cos(theta);
         var y = Math.sin(theta);
         geometry.vertices.push(
-	new THREE.Vector3( Math.cos(i), Math.sin(i), 1)
+	new THREE.Vector3( Math.cos(i), Math.sin(i), Math.sin(i))
 );
      
       }
 
-var line = new THREE.Line( geometry, material );
-scene.add( line );
+
     }
 
     var controls = new THREE.TrackballControls(camera);
