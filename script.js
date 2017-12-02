@@ -169,25 +169,16 @@ window.onload = function() {
 //utilities stuff
 
 $(function() {
-  var state = 0;
-  var snapper = new Snap({
-  element: document.getElementById('content')
-});
+  var slideout = new Slideout({
+    'panel': document.getElementById('panel'),
+    'menu': document.getElementById('menu'),
+    'padding': 256,
+    'tolerance': 70
+  });
+  
   $('button').click(function(){
       $(this).toggleClass('is-active');
-      switch(state){
-        case 0:
-          snapper.open('right');
-          state = 1;
-          break;
-        case 1:
-          snapper.close();
-          state = 0;
-          break;
-       }
+      slideout.toggle();   
     });
-  
-  
-  
-  
+    
 });
