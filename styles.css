@@ -17,12 +17,3 @@ html{
   position: fixed;
    color: white;
 }
-h1.song{
- z-index:1;
-  margin-top: 20px;
-  margin-left: 40px;
-  font-family: 'Quicksand', sans-serif;
-}
-span{
- z-index: 1;
-}
