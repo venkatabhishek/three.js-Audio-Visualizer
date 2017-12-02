@@ -12,7 +12,7 @@ window.onload = function() {
     var scene = new THREE.Scene();
 
     var camera = new THREE.PerspectiveCamera(10, window.innerWidth / window.innerHeight, 0.1, 80000);
-    camera.position.set(0, 25, 2000);
+    camera.position.set(0, 0, 2100);
 
     camera.lookAt(scene.position);
 
@@ -117,6 +117,7 @@ window.onload = function() {
         var steps = 0.09;
         var phase = 1.7;
         var coloredLine = getColoredBufferLine(steps, phase, geometry);
+        coloredLine.position.set(0,-20,0);
         scene.add(coloredLine);
 
     }
