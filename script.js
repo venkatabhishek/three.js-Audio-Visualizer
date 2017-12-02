@@ -12,7 +12,7 @@ window.onload = function() {
     var scene = new THREE.Scene();
 
     var camera = new THREE.PerspectiveCamera(10, window.innerWidth / window.innerHeight, 0.1, 80000);
-    camera.position.set(3000, 10, 4000);
+    camera.position.set(100, 10, 100);
     camera.lookAt(scene.position);
 
     var renderer = new THREE.WebGLRenderer({
@@ -26,22 +26,23 @@ window.onload = function() {
 
   //draw lines from frequency magnitudes
     function geo(arr) {
-     var curve = new THREE.SplineCurve( [
-	new THREE.Vector2( -10, 0 ),
-	new THREE.Vector2( -5, 5 ),
-	new THREE.Vector2( 0, 0 ),
-	new THREE.Vector2( 5, -5 ),
-	new THREE.Vector2( 10, 0 )
-] );
+    var material = new THREE.LineBasicMaterial({
+	color: 0x0000ff
+});
 
-var points = curve.getPoints( 50 );
-var geometry = new THREE.BufferGeometry().setFromPoints( points );
+var geometry = new THREE.Geometry();
+      for(var i = 0 ; i < arr.length; i++){
+       var r = arr[i];
+        var theta = (2*Math.PI/1024)*i;
+        var x = r*Math.cos(theta);
+        var y = r*Math.sin(theta);
+geometry.vertices.push(
+	new THREE.Vector3( x, y, 1 )
+); 
+      }
 
-var material = new THREE.LineBasicMaterial( { color : 0xff0000 } );
-
-// Create the final object to add to the scene
-var splineObject = new THREE.Line( geometry, material );
-      scene.add(splineObject);
+var line = new THREE.Line( geometry, material );
+scene.add( line );
     }
 
     var controls = new THREE.TrackballControls(camera);
