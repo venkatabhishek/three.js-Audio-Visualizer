@@ -26,21 +26,22 @@ window.onload = function() {
 
   //draw lines from frequency magnitudes
     function geo(arr) {
-      var material = new THREE.LineBasicMaterial({
-	color: 0x0000ff
-});
+     var curve = new THREE.SplineCurve( [
+	new THREE.Vector2( -10, 0 ),
+	new THREE.Vector2( -5, 5 ),
+	new THREE.Vector2( 0, 0 ),
+	new THREE.Vector2( 5, -5 ),
+	new THREE.Vector2( 10, 0 )
+] );
 
-var geometry = new THREE.Geometry();
-      for(var q = 0; q < arr.length;q++){
-       
-        
-geometry.vertices.push(
-	new THREE.Vector3( 0, q, 0 )
-);
-      }
+var points = curve.getPoints( 50 );
+var geometry = new THREE.BufferGeometry().setFromPoints( points );
 
-var line = new THREE.Line( geometry, material );
-scene.add( line );
+var material = new THREE.LineBasicMaterial( { color : 0xff0000 } );
+
+// Create the final object to add to the scene
+var splineObject = new THREE.Line( geometry, material );
+      scene.add(splineObject);
     }
 
     var controls = new THREE.TrackballControls(camera);
@@ -62,7 +63,7 @@ scene.add( line );
 
     // frequencyBinCount tells you how many values you'll receive from the analyser
     var frequencyData = new Uint8Array(analyser.frequencyBinCount);
-    console.log(analyser.frequencyBinCount);
+    
     // we're ready to receive some data!
     // loop
 
