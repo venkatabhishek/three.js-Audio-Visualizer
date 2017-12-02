@@ -25,6 +25,7 @@ h1{
 }
 button{ 
   z-index: 2;
-  bottom:0px;
+  bottom:30px;
+  left: 40px;
 }
 
