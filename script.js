@@ -26,32 +26,21 @@ window.onload = function() {
 
   //draw lines from frequency magnitudes
     function geo(arr) {
-      for(var q = 0; q < 25; q++){
-       
-        var red = new THREE.Color(0xff0000);
-        var blue = new THREE.Color(0x0000ff);
-        var green = new THREE.Color(0x00ff00);
+      var material = new THREE.LineBasicMaterial({
+	color: 0x0000ff
+});
+
+var geometry = new THREE.Geometry();
+      for(var q = 0; q < arr.length;q++){
        
         
-        var geometry = new THREE.BoxBufferGeometry( 10, arr[q], 10 );
-        switch(q%3){
-          case 0:
-            var material = new THREE.MeshBasicMaterial( {color: red} );
-            break;
-          case 1:
-            var material = new THREE.MeshBasicMaterial( {color: blue} );
-            break;
-          case 2:
-            var material = new THREE.MeshBasicMaterial( {color: green} );
-            break;
-               }
-
-      
-var cube = new THREE.Mesh( geometry, material );
-
-      scene.add(cube);
-        cube.position.set(0, 0, q*10);
+geometry.vertices.push(
+	new THREE.Vector3( 0, q, 0 )
+);
       }
+
+var line = new THREE.Line( geometry, material );
+scene.add( line );
     }
 
     var controls = new THREE.TrackballControls(camera);
