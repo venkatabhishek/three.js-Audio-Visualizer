@@ -12,7 +12,8 @@ window.onload = function() {
     var scene = new THREE.Scene();
 
     var camera = new THREE.PerspectiveCamera(10, window.innerWidth / window.innerHeight, 0.1, 80000);
-    camera.position.set(0, 10, 100);
+    camera.position.set(0, 10, 1000);
+  
     camera.lookAt(scene.position);
 
     var renderer = new THREE.WebGLRenderer({
@@ -32,11 +33,11 @@ window.onload = function() {
         var geometry = new THREE.Geometry();
       
       for(var i = 0; i < arr.length;i++){
-       var r =  100;
-        var theta = (2*Math.PI/1024)*i;
+       var r =  arr[i] + 10;
+        var theta = (2*Math.PI/1024)*i*4;
       
 geometry.vertices.push(
-	new THREE.Vector3( Math.cos(theta), Math.sin(theta), r)
+	new THREE.Vector3( r*Math.cos(theta), r*Math.sin(theta),4)
 );
         
       }
