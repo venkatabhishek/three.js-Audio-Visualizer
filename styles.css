@@ -30,4 +30,8 @@ button{
 }
 div{
   z-index: 4;
+  right: 0;  
+}
+.closed{
+  transform: translateX(45px);
 }

@@ -172,7 +172,11 @@ $(function() {
 
   $('button').click(function(){
       $(this).toggleClass('is-active');
-        
+        $("#drawer").animate({
+          
+        });        
     });
+  
+
     
 });
