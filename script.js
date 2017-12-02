@@ -28,7 +28,8 @@ window.onload = function() {
     function geo(arr) {
       for(var i = 0; i < 20;i++){
         var geometry = new THREE.CylinderGeometry( i, i, arr[i], 32 );
-var material = new THREE.MeshBasicMaterial( {color: 0x0000ff} );
+        var col = '#'+(Math.random()*0xFFFFFF<<0).toString(16);
+var material = new THREE.MeshBasicMaterial( {color: col} );
 var cylinder = new THREE.Mesh( geometry, material );
 scene.add( cylinder );
       }
