@@ -165,3 +165,11 @@ window.onload = function() {
     audio.play();
     renderFrame();
 };
+
+//utilities stuff
+
+$(function() {
+    $('button').click(function(){
+      $(this).toggleClass('is-active')
+    })
+});
