@@ -26,22 +26,13 @@ window.onload = function() {
 
   //draw lines from frequency magnitudes
     function geo(arr) {
-    var material = new THREE.LineBasicMaterial({
-	color: 0x0000ff
-});
-
-var geometry = new THREE.Geometry();
-      for(var i = 0 ; i < 360; i++){
-       var r = arr[i];
-        var theta = (2*Math.PI/1024)*i;
-          var x = Math.cos(theta);
-        var y = Math.sin(theta);
-        geometry.vertices.push(
-	new THREE.Vector3( Math.cos(i), Math.sin(i), Math.sin(i))
-);
-     
+      for(var i = 0; i < 20;i++){
+        var geometry = new THREE.CylinderGeometry( i, i, arr[i], 32 );
+var material = new THREE.MeshBasicMaterial( {color: 0x0000ff} );
+var cylinder = new THREE.Mesh( geometry, material );
+scene.add( cylinder );
       }
-
+ 
 
     }
 
