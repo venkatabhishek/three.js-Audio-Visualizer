@@ -28,4 +28,8 @@ button{
   bottom:30px;
   left: 40px;
 }
+div{
+  z-index: 4;
+  float: right;
+}
 

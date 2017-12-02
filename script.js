@@ -169,12 +169,25 @@ window.onload = function() {
 //utilities stuff
 
 $(function() {
-    $('button').click(function(){
+  var state = 0;
+  var snapper = new Snap({
+  element: document.getElementById('content')
+});
+  $('button').click(function(){
       $(this).toggleClass('is-active');
+      switch(state){
+        case 0:
+          snapper.open('right');
+          state = 1;
+          break;
+        case 1:
+          snapper.close();
+          state = 0;
+          break;
+       }
     });
   
-  var snapper = new Snap({
-  element: document,
-    
-});
+  
+  
+  
 });
