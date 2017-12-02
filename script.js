@@ -170,6 +170,11 @@ window.onload = function() {
 
 $(function() {
     $('button').click(function(){
-      $(this).toggleClass('is-active')
-    })
+      $(this).toggleClass('is-active');
+    });
+  
+  var snapper = new Snap({
+  element: document,
+    
+});
 });
