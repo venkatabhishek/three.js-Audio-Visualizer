@@ -38,5 +38,12 @@ div{
   width: 400px;
   height: 400px;
   margin-top: 70px;
+  opacity: 0;
   transform: translateX(400px);
+  transition: opacity 1.0s ease-out, transform 1.0s;
+}
+.open{
+   opacity: 1 !important;
+    transform: translateX(-22px) !important;
+    transition: opacity 1.0s ease-out, transform 1.0s !important;
 }

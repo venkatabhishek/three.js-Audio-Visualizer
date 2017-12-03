@@ -172,7 +172,7 @@ $(function() {
 var state = 1;
   $('button').click(function(){
       $(this).toggleClass('is-active');
-      $("#drawer").toggleClass('closed');
+      $("#drawer").toggleClass('open');
     
     });
   
