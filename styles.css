@@ -54,7 +54,7 @@ position: absolute;
   color: white;
   font-family: 'Inconsolata', monospace;
 }
-#form{
+#textarea{
  position: absolute;
     margin-top: 200px;
     width: 170px;
