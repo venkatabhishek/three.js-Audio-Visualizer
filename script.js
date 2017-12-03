@@ -169,6 +169,7 @@ window.onload = function() {
 //utilities stuff
 
 $(function() {
+  
 var state = 1;
   $('.hamburger').click(function(){
       $(this).toggleClass('is-active');
