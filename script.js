@@ -163,7 +163,8 @@ window.onload = function() {
       
       //custom audio controls
       $("#timeStamp").html(Math.floor(audio.currentTime) + " / " + Math.floor(audio.duration) + "s");
-      $("#time").css("value",Math.floor(audio.currentTime)/Math.floor(audio.dur))
+      
+     $("#time").val((Math.floor(audio.currentTime)/Math.floor(audio.duration)) * 100);
 
     }
     audio.play();
@@ -186,6 +187,10 @@ window.onload = function() {
     $(this).css("display","none");
     $("#play").css("display", "inline-block");
     audio.pause();
+  });
+  
+  $("#time").change(function(){
+    
   });
   
 };
