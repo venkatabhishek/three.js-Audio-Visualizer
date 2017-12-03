@@ -15,14 +15,9 @@ html{
   margin: 0;
   padding: 0;
   position: fixed;
-   color: white;
+   
 }
-h1{
-  z-index:1;
-  font-family: 'Quicksand', sans-serif;
-  margin-left: 40px;
-  margin-top: 20px;
-}
+
 button{ 
   z-index: 2;
   bottom:30px;
@@ -34,6 +29,7 @@ div{
 }
 
 #drawer{
+  color: black;
   background-color: #f5f5f5;
   width: 400px;
   height: 400px;
@@ -46,4 +42,11 @@ div{
    opacity: 1 !important;
     transform: translateX(-22px) !important;
     transition: opacity 1.0s ease-out, transform 1.0s !important;
+}
+.song{
+   z-index:1;
+  margin-left: 40px;
+  margin-top: 20px;
+  color: white;
+  font-family: 'Inconsolata', monospace;
 }
