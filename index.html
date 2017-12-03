@@ -20,12 +20,14 @@
 <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
   <i class="material-icons">add</i>
 </button>
+      
+      <p class="info">Enter the url of the song and click the button above:</p>
     
   <form action="#">
   <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label url">
     <h4></h4>
-    <input class="mdl-textfield__input" type="text" id="sample3">
-    <label class="mdl-textfield__label" for="sample3">Text...</label>
+    <input class="mdl-textfield__input" type="text" id="s">
+    <label class="mdl-textfield__label" for="sample3">SoundCloud Url...</label>
   </div>
 </form>
 
@@ -52,7 +54,7 @@
     </div>
     
   <audio controls crossorigin="anonymous" id="myAudio" src="https://cdn.glitch.com/ff820234-7fc5-4317-a00a-ad183b72978d%2Fmoonlight.mp3?1512000557559"></audio>
-    <h2 class="song">Song: </h2>
+    <h2 class="song">Song: </h2><h2 id="name">testing</h2>
      
   <script
   src="https://code.jquery.com/jquery-3.2.1.min.js"

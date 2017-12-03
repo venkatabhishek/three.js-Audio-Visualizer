@@ -164,7 +164,7 @@ window.onload = function() {
       //custom audio controls
       $("#timeStamp").html(Math.floor(audio.currentTime) + " / " + Math.floor(audio.duration) + "s");
       
-     $("#time").val((Math.floor(audio.currentTime)/Math.floor(audio.duration)) * 100);
+     
 
     }
     audio.play();
@@ -190,8 +190,11 @@ window.onload = function() {
   });
   
   $("#time").change(function(){
-    
+    audio.currentTime = (($("#time").val()/100)*(Math.floor(audio.duration)));
   });
+  setInterval(function(){
+    $("#time").val((Math.floor(audio.currentTime)/Math.floor(audio.duration)) * 100);
+  }, 1000);
   
 };
 

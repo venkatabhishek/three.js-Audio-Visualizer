@@ -54,6 +54,14 @@ position: absolute;
   color: white;
   font-family: 'Inconsolata', monospace;
 }
+#name{
+    position: fixed;
+   z-index:2;
+  margin-left: 164px;
+  margin-top: 20px;
+  color: white;
+  font-family: 'Inconsolata', monospace;
+}
 .url{
   left: 20px;
   width: 80%
@@ -91,3 +99,8 @@ position: absolute;
   color: white;
   font-family: 'Inconsolata', monospace;
 }
+.info{
+  margin-top: 7px;
+  margin-left: 28px;
+}
+button:focus {outline:0;}
