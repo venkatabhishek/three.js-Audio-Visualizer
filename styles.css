@@ -54,4 +54,7 @@ position: absolute;
   color: white;
   font-family: 'Inconsolata', monospace;
 }
-
+.url{
+  left: 20px;
+  width: 80%
+}
