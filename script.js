@@ -170,7 +170,7 @@ window.onload = function() {
 
 $(function() {
 var state = 1;
-  $('button').click(function(){
+  $('.hamburger').click(function(){
       $(this).toggleClass('is-active');
       $("#drawer").toggleClass('open');
     

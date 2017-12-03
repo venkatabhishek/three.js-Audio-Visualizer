@@ -23,12 +23,11 @@ button{
   bottom:30px;
   left: 40px;
 }
-div{
-  z-index: 4;
-  right: 0;  
-}
+
 
 #drawer{
+   z-index: 4;
+  right: 0;  
   color: black;
   background-color: #f5f5f5;
   width: 400px;
