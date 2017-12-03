@@ -169,12 +169,11 @@ window.onload = function() {
 //utilities stuff
 
 $(function() {
-
+var state = 1;
   $('button').click(function(){
       $(this).toggleClass('is-active');
-        $("#drawer").animate({
-          
-        });        
+      $("#drawer").toggleClass('closed');
+    
     });
   
 

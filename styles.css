@@ -32,6 +32,11 @@ div{
   z-index: 4;
   right: 0;  
 }
-.closed{
-  transform: translateX(45px);
+
+#drawer{
+  background-color: #f5f5f5;
+  width: 400px;
+  height: 400px;
+  margin-top: 70px;
+  transform: translateX(400px);
 }
