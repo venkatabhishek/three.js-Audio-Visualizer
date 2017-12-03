@@ -64,3 +64,7 @@ position: absolute;
   left: 40%;
   top: 85%;
 }
+#time{
+  background-color: white;
+  width: 350px;
+}
