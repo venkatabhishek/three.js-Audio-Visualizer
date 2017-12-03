@@ -2,7 +2,9 @@ canvas{
   background-color: black;
   width: 100vw;
   height: 100vh;
-  
+  position: absolute;
+  z-index: 1;
+    
     
 }
 audio{
@@ -43,13 +45,14 @@ button{
     transition: opacity 1.0s ease-out, transform 1.0s !important;
 }
 .song{
-   z-index:1;
+   z-index:2;
   margin-left: 40px;
   margin-top: 20px;
   color: white;
   font-family: 'Inconsolata', monospace;
 }
-input{
+#songname{
   position: relative;
   z-index: 20;
+  height: 30px;
 }

@@ -23,8 +23,8 @@ window.onload = function() {
     renderer.setPixelRatio(window.devicePixelRatio);
     renderer.setSize(window.innerWidth, window.innerHeight);
     
-  
-    document.body.appendChild(renderer.domElement);
+    $("#candiv").append(renderer.domElement);
+    
 
     //draw lines from frequency magnitudes
     function getColoredBufferLine(steps, phase, geometry) {
