@@ -61,5 +61,6 @@ position: absolute;
 .controls{
   position: fixed;
   z-index:2;
-  left: 
+  left: 40%;
+  top: 85%;
 }
