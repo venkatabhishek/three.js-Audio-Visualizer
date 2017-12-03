@@ -58,3 +58,8 @@ position: absolute;
   left: 20px;
   width: 80%
 }
+.controls{
+  position: fixed;
+  z-index:2;
+  left: 
+}

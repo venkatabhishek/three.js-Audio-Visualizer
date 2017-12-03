@@ -152,7 +152,7 @@ window.onload = function() {
         // update data in frequencyData
         analyser.getByteFrequencyData(frequencyData);
         // render frame based on values in frequencyData 
-
+        
 
         //threejs visualizations
         while (scene.children.length > 0) {
