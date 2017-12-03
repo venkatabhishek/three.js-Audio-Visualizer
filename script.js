@@ -170,6 +170,7 @@ window.onload = function() {
     audio.play();
     renderFrame();
   
+  
   var state = 1;
   $('.hamburger').click(function(){
       $(this).toggleClass('is-active');
@@ -195,6 +196,12 @@ window.onload = function() {
   setInterval(function(){
     $("#time").val((Math.floor(audio.currentTime)/Math.floor(audio.duration)) * 100);
   }, 1000);
+  
+  $(".submit").click(function(){
+    var url = $("#songurl").val();
+    
+  });
+  
   
 };
 
