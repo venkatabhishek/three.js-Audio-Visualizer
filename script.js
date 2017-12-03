@@ -160,17 +160,16 @@ window.onload = function() {
         }
         renderPhone(frequencyData);
         controls.update();
+      
+      //custom audio controls
+      $("#timeStamp").html(Math.floor(audio.currentTime) + " / " + Math.floor(audio.duration) + "s");
+      $("#time").css("value",Math.floor(audio.currentTime)/Math.floor(audio.dur))
 
     }
     audio.play();
     renderFrame();
-};
-
-//utilities stuff
-
-$(function() {
   
-var state = 1;
+  var state = 1;
   $('.hamburger').click(function(){
       $(this).toggleClass('is-active');
       $("#drawer").toggleClass('open');
@@ -180,8 +179,14 @@ var state = 1;
   $("#play").click(function(){
     $(this).css("display", "none");
     $("#pause").css("display", "inline-block");
+    audio.play();
   });
   
+  $("#pause").click(function(){
+    $(this).css("display","none");
+    $("#play").css("display", "inline-block");
+    audio.pause();
+  });
+  
+};
 
-    
-});

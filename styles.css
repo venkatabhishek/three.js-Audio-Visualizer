@@ -72,18 +72,22 @@ position: absolute;
 }
 #play{
   color:white;
-  
+  cursor:pointer;
+    display: none;
 }
 #pause{
   color:white;
-  display:none;
+  display:inline-block;
+  cursor:pointer;
 }
 #ctrl{
   margin-top: 10px;
   color:white;
+  text-align: center;
+  width: 87%;
 }
 #timeStamp{
-  margin-left: 35%;
+  margin-left: 29%;
   color: white;
   font-family: 'Inconsolata', monospace;
 }
