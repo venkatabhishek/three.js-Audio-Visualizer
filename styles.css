@@ -63,8 +63,14 @@ position: absolute;
   z-index:2;
   left: 40%;
   top: 85%;
+  display:inline-block;
+  width: 30%;
 }
 #time{
   background-color: white;
   width: 350px;
+}
+#play{
+  color:white;
+  margin-left: 40%;
 }
