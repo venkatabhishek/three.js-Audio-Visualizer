@@ -51,8 +51,10 @@ button{
   color: white;
   font-family: 'Inconsolata', monospace;
 }
-#songname{
-  position: relative;
-  z-index: 20;
-  height: 30px;
+#form{
+ position: absolute;
+    margin-top: 200px;
+    width: 170px;
+    height: 25px;
+    z-index: 5;
 }

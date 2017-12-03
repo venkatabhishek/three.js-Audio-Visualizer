@@ -23,7 +23,7 @@ window.onload = function() {
     renderer.setPixelRatio(window.devicePixelRatio);
     renderer.setSize(window.innerWidth, window.innerHeight);
     
-    $("#candiv").append(renderer.domElement);
+    $(document).append(renderer.domElement);
     
 
     //draw lines from frequency magnitudes
