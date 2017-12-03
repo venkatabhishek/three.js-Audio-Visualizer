@@ -177,6 +177,11 @@ var state = 1;
     
     });
   
+  $("#play").click(function(){
+    $(this).css("display", "none");
+    $("#pause").css("display", "inline-block");
+  });
+  
 
     
 });

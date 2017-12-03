@@ -61,8 +61,8 @@ position: absolute;
 .controls{
   position: fixed;
   z-index:2;
-  left: 40%;
-  top: 85%;
+  left: 37%;
+  bottom: 5%;
   display:inline-block;
   width: 30%;
 }
@@ -72,5 +72,18 @@ position: absolute;
 }
 #play{
   color:white;
-  margin-left: 40%;
+  
+}
+#pause{
+  color:white;
+  display:none;
+}
+#ctrl{
+  margin-top: 10px;
+  color:white;
+}
+#timeStamp{
+  margin-left: 35%;
+  color: white;
+  font-family: 'Inconsolata', monospace;
 }
