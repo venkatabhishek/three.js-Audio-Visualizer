@@ -122,7 +122,7 @@ window.onload = function() {
 
     }
 
-    var controls = new THREE.TrackballControls(camera);
+    var controls = new THREE.TrackballControls(camera, renderer.domElement);
     controls.rotateSpeed = 5.0;
     controls.zoomSpeed = 3.2;
     controls.panSpeed = 0.8;

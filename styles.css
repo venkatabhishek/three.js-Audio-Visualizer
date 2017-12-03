@@ -54,10 +54,4 @@ position: absolute;
   color: white;
   font-family: 'Inconsolata', monospace;
 }
-#textarea{
- position: absolute;
-    margin-top: 200px;
-    width: 170px;
-    height: 25px;
-    z-index: 5;
-}
+
