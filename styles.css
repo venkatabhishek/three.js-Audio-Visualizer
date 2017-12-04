@@ -118,3 +118,6 @@ button:focus {outline:0;}
 ul{
   margin-left: 34px;
 }
+.mdl-slider__container{
+  margin-left:1px;
+}

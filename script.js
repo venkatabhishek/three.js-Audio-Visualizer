@@ -201,17 +201,17 @@ window.onload = function() {
     var url = $("#songurl").val();
   });
   $("button[data-id=1]").click(function(){
-    $("audio").css("src","https://cdn.glitch.com/ff820234-7fc5-4317-a00a-ad183b72978d%2Fmoonlight.mp3?1512000557559");
+    $("audio").attr("src","https://cdn.glitch.com/ff820234-7fc5-4317-a00a-ad183b72978d%2Fmoonlight.mp3?1512000557559");
     $("#name").html("Moonlight Sonata");
     audio.play();
   });
   $("button[data-id=2]").click(function(){
-    $("audio").css("src","https://cdn.glitch.com/9f19ab47-4e31-4e02-9445-d09d7e33a9a3%2FOut%20on%20the%20road.mp3?1512407277280");
+    $("audio").attr("src","https://cdn.glitch.com/9f19ab47-4e31-4e02-9445-d09d7e33a9a3%2FOut%20on%20the%20road.mp3?1512407277280");
     $("#name").html("Out on the Road");
     audio.play();
   });
   $("button[data-id=3]").click(function(){
-    $("audio").css("src","https://cdn.glitch.com/9f19ab47-4e31-4e02-9445-d09d7e33a9a3%2FCrazy%20game%20.mp3?1512407412373");
+    $("audio").attr("src","https://cdn.glitch.com/9f19ab47-4e31-4e02-9445-d09d7e33a9a3%2FCrazy%20game%20.mp3?1512407412373");
     $("#name").html("Crazy Game");
     audio.play();
   });
