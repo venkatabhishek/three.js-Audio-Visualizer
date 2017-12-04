@@ -1,93 +1,79 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Audio Visualizer</title>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-     
-    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
-    
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
-    <link rel="stylesheet" href="/styles.css">
-    <link rel="stylesheet" href="/hamburgers.css">
-  
-  </head>
-  <body>
-    
-    <div id="drawer"> 
-<button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored submit">
-  <i class="material-icons">code</i>
-</button>
-      
-      <p class="info">Press the button for the </p>
-    
-   <ul class="demo-list-control mdl-list">
-  <li class="mdl-list__item">
-    <span class="mdl-list__item-primary-content">
-      Moonlight Sonata
-    </span>
-    <span class="mdl-list__item-secondary-action">
-      <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" style="top: 2px; left: 10px;" data-id="1">
-  Play
-</button>
-    </span>
-  </li>
-     <li class="mdl-list__item">
-    <span class="mdl-list__item-primary-content">
-      Out on the Road
-    </span>
-    <span class="mdl-list__item-secondary-action">
-      <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent playBtn" data-id="2">
-  Play
-</button>
-    </span>
-  </li>
-     <li class="mdl-list__item">
-    <span class="mdl-list__item-primary-content">
-      Crazy Game
-    </span>
-    <span class="mdl-list__item-secondary-action">
-      <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent playBtn" data-id="3">
-  Play
-</button>
-    </span>
-  </li>
-      </ul>
-
-     </div>
-   
-
-    <button class="hamburger hamburger--slider" type="button">
-  <span class="hamburger-box">
-    <span class="hamburger-inner"></span>
-  </span>
-</button>
-    
-    
-    <div class="controls">
-      <h3 id="timeStamp">test</h3>
-      
-      <input id="time" class="mdl-slider mdl-js-slider" type="range"
-  min="0" max="100"  tabindex="0">
-      <div id="ctrl"><i id="play" class="material-icons">play_arrow</i>
-      <i id="pause" class="material-icons">pause</i>
-      <i class="material-icons">volume_up</i></div>
-      
-    
-    </div>
-    
-  <audio controls crossorigin="anonymous" id="myAudio" src="https://cdn.glitch.com/ff820234-7fc5-4317-a00a-ad183b72978d%2Fmoonlight.mp3?1512000557559"></audio>
-    <h2 class="song">Song: </h2><h2 id="name">Moonlight Sonata</h2>
-     
-  <script
-  src="https://code.jquery.com/jquery-3.2.1.min.js"
-  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-  crossorigin="anonymous"></script>
-    <script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/88/three.js"></script>
-    <script src="https://rawgit.com/mrdoob/three.js/master/examples/js/controls/TrackballControls.js"></script>
+   <head>
+      <title>Audio Visualizer</title>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+      <link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
+      <link rel="stylesheet" href="/styles.css">
+      <link rel="stylesheet" href="/hamburgers.css">
+   </head>
+   <body>
+      <div id="drawer">
+         <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored submit">
+         <i class="material-icons">code</i>
+         </button>
+         <p class="info">Press the button for the </p>
+         <ul class="demo-list-control mdl-list">
+            <li class="mdl-list__item">
+               <span class="mdl-list__item-primary-content">
+               Moonlight Sonata
+               </span>
+               <span class="mdl-list__item-secondary-action">
+               <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" style="top: 2px; left: 10px;" data-id="1">
+               Play
+               </button>
+               </span>
+            </li>
+            <li class="mdl-list__item">
+               <span class="mdl-list__item-primary-content">
+               Out on the Road
+               </span>
+               <span class="mdl-list__item-secondary-action">
+               <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent playBtn" data-id="2">
+               Play
+               </button>
+               </span>
+            </li>
+            <li class="mdl-list__item">
+               <span class="mdl-list__item-primary-content">
+               Crazy Game
+               </span>
+               <span class="mdl-list__item-secondary-action">
+               <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent playBtn" data-id="3">
+               Play
+               </button>
+               </span>
+            </li>
+         </ul>
+      </div>
+      <button class="hamburger hamburger--slider" type="button">
+      <span class="hamburger-box">
+      <span class="hamburger-inner"></span>
+      </span>
+      </button>
+      <div class="controls">
+         <h3 id="timeStamp">test</h3>
+         <input id="time" class="mdl-slider mdl-js-slider" type="range"
+            min="0" max="100"  tabindex="0">
+         <div id="ctrl"><i id="play" class="material-icons">play_arrow</i>
+            <i id="pause" class="material-icons">pause</i>
+            <i class="material-icons">volume_up</i>
+         </div>
+      </div>
+      <audio controls crossorigin="anonymous" id="myAudio" src="https://cdn.glitch.com/ff820234-7fc5-4317-a00a-ad183b72978d%2Fmoonlight.mp3?1512000557559"></audio>
+      <h2 class="song">Song: </h2>
+      <h2 id="name">Moonlight Sonata</h2>
+      <script
+         src="https://code.jquery.com/jquery-3.2.1.min.js"
+         integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+         crossorigin="anonymous"></script>
+      <script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/88/three.js"></script>
+      <script src="https://rawgit.com/mrdoob/three.js/master/examples/js/controls/TrackballControls.js"></script>
       <script src="/script.js" defer></script>
-  </body>
+   </body>
 </html>

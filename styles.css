@@ -1,123 +1,117 @@
-canvas{
-  background-color: black;
-  width: 100vw;
-  height: 100vh;
-  position: fixed;
-  z-index: 1;
-    
-    
+canvas {
+    background-color: black;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    z-index: 1;
 }
-audio{
-  display:none;
+audio {
+    display: none;
 }
-html{
-  overflow: hidden;
+html {
+    overflow: hidden;
 }
 * {
-  margin: 0;
-  padding: 0;
-  
-   
+    margin: 0;
+    padding: 0;
 }
-
-button{ 
-  position: fixed;
-  z-index: 2;
-  bottom:30px;
-  left: 40px;
+button {
+    position: fixed;
+    z-index: 2;
+    bottom: 30px;
+    left: 40px;
 }
-
-
-#drawer{
-position: absolute;
-  z-index: 4;
-  right: 0;  
-  color: black;
-  background-color: #f5f5f5;
-  width: 400px;
-  height: 400px;
-  margin-top: 70px;
-  opacity: 0;
-  transform: translateX(400px);
-  transition: opacity 1.0s ease-out, transform 1.0s;
+#drawer {
+    position: absolute;
+    z-index: 4;
+    right: 0;
+    color: black;
+    background-color: #f5f5f5;
+    width: 400px;
+    height: 400px;
+    margin-top: 70px;
+    opacity: 0;
+    transform: translateX(400px);
+    transition: opacity 1.0s ease-out, transform 1.0s;
 }
-.open{
-   opacity: 1 !important;
+.open {
+    opacity: 1 !important;
     transform: translateX(-22px) !important;
     transition: opacity 1.0s ease-out, transform 1.0s !important;
 }
-.song{
-  position: fixed;
-   z-index:2;
-  margin-left: 40px;
-  margin-top: 20px;
-  color: white;
-  font-family: 'Inconsolata', monospace;
-}
-#name{
+.song {
     position: fixed;
-   z-index:2;
-  margin-left: 164px;
-  margin-top: 20px;
-  color: white;
-  font-family: 'Inconsolata', monospace;
+    z-index: 2;
+    margin-left: 40px;
+    margin-top: 20px;
+    color: white;
+    font-family: 'Inconsolata', monospace;
 }
-.url{
-  left: 20px;
-  width: 80%
+#name {
+    position: fixed;
+    z-index: 2;
+    margin-left: 164px;
+    margin-top: 20px;
+    color: white;
+    font-family: 'Inconsolata', monospace;
 }
-.controls{
-  position: fixed;
-  z-index:2;
-  left: 37%;
-  bottom: 5%;
-  display:inline-block;
-  width: 30%;
+.url {
+    left: 20px;
+    width: 80%
 }
-#time{
-  background-color:white;
-  width: 350px;
+.controls {
+    position: fixed;
+    z-index: 2;
+    left: 37%;
+    bottom: 5%;
+    display: inline-block;
+    width: 30%;
 }
-#play{
-  color:white;
-  cursor:pointer;
+#time {
+    background-color: white;
+    width: 350px;
+}
+#play {
+    color: white;
+    cursor: pointer;
     display: none;
 }
-#pause{
-  color:white;
-  display:inline-block;
-  cursor:pointer;
+#pause {
+    color: white;
+    display: inline-block;
+    cursor: pointer;
 }
-#ctrl{
-  margin-top: 10px;
-  color:white;
-  text-align: center;
-  width: 87%;
+#ctrl {
+    margin-top: 10px;
+    color: white;
+    text-align: center;
+    width: 87%;
 }
-#timeStamp{
-  margin-left: 29%;
-  color: white;
-  font-family: 'Inconsolata', monospace;
+#timeStamp {
+    margin-left: 29%;
+    color: white;
+    font-family: 'Inconsolata', monospace;
 }
-.info{
-  margin-top: 7px;
-  margin-left: 28px;
+.info {
+    margin-top: 7px;
+    margin-left: 28px;
 }
-button:focus {outline:0;}
+button:focus {
+    outline: 0;
+}
 .demo-list-control {
-  width: 300px;
+    width: 300px;
 }
-
 .demo-list-radio {
-  display: inline;
+    display: inline;
 }
-.playBtn{
-  top:2px;
-  left: 10px;
+.playBtn {
+    top: 2px;
+    left: 10px;
 }
-ul{
-  margin-left: 34px;
+ul {
+    margin-left: 34px;
 }
-.mdl-slider__container{
-  margin-left:1px;
+.mdl-slider__container {
+    margin-left: 1px;
 }
