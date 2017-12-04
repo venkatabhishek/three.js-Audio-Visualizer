@@ -104,3 +104,14 @@ position: absolute;
   margin-left: 28px;
 }
 button:focus {outline:0;}
+.demo-list-control {
+  width: 300px;
+}
+
+.demo-list-radio {
+  display: inline;
+}
+.playBtn{
+  top:2px;
+  left: 10px;
+}
