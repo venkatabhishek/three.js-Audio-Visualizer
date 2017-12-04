@@ -199,9 +199,16 @@ window.onload = function() {
   
   $(".submit").click(function(){
     var url = $("#songurl").val();
-    
   });
-  
+  $("button[data-id=1]").click(function(){
+    console.log("casd");
+  });
+  $("button[data-id=1]").click(function(){
+    console.log("casd");
+  });
+  $("button[data-id=1]").click(function(){
+    console.log("casd");
+  });
   
 };
 

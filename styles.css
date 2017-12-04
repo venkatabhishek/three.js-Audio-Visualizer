@@ -115,3 +115,6 @@ button:focus {outline:0;}
   top:2px;
   left: 10px;
 }
+ul{
+  margin-left: 34px;
+}
