@@ -4,7 +4,7 @@ An audio visualizer that utilizes the HTML5 [Web Audio API](https://developer.mo
 
 [DEMO](https://circle-audio-visualizer.glitch.me/)
 
-(NOTE - Try clicking and dragging screen,  to play with demo)
+(NOTE - Try clicking and dragging screen, as well as scrolling to play with demo)
 
 ### Three.js Components
 
@@ -31,6 +31,8 @@ Three.js runs in all browsers supporting WebGL 2.0:
 
 * Implement song track streaming via direct url or API(Spotify, SoundCloud, etc...)
 * Sound Controls
+
+Message or Email me for help and requests
 
 
 
