@@ -1,16 +1,20 @@
-# My cool website
+# three.js Audio Visualizer
 
-This file describes your project to the community. What's your cool website about? What makes it special?
+An audio visualizer that utilizes the HTML5 Web Audio API as well as three.js to create a 3-Dimensional music player/visualizer
 
-ヽ(๏∀๏ )ﾉ
 
-## ← index.html
 
-Where you'll write the content of your website. 
+## three.js Components
 
-## ← styles.css
+* WebGL Renderer
+* Perspective Camera
+* Trackball Controls
 
-CSS files add styling rules to your content
+## Other Resources
+
+* Material Design Lite - Front-End Web Framework
+  *
+* Hamburgers
 
 ## ← script.js
 
