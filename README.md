@@ -15,7 +15,7 @@ An audio visualizer that utilizes the HTML5 [Web Audio API](https://developer.mo
 ### Other Resources
 
 * [Material Design Lite](https://getmdl.io/) - Light Front-End Web Framework
-* [Hamburgers](https://jonsuh.com/hamburgers/) - CSS-animated Hamburger Icons 
+* [Hamburgers](https://jonsuh.com/hamburgers/) - CSS-animated Hamburger Icons
 
 ### Browser Support
 
@@ -23,7 +23,7 @@ WebGL 2.0 requires hardware with OpenGL ES 3.0 support or comparable desktop Ope
 
 Three.js runs in all browsers supporting WebGL 2.0:
 
-* Firefox 51+ 
+* Firefox 51+
 * IE 11+
 * Chrome 59+
 
@@ -34,5 +34,4 @@ Three.js runs in all browsers supporting WebGL 2.0:
 
 Message or Email me for help and requests
 
-
-
+Made with [Glitch](glitch.com)
