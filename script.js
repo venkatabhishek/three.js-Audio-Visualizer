@@ -1,5 +1,5 @@
 window.onload = function() {
-    //audio setup
+    // audio setup
     var ctx = new AudioContext();
     var audio = document.getElementById('myAudio');
     var audioSrc = ctx.createMediaElementSource(audio);
@@ -8,7 +8,7 @@ window.onload = function() {
 
     audioSrc.connect(analyser);
 
-    //threejs stuff
+    // threejs setup
     var scene = new THREE.Scene();
 
     var camera = new THREE.PerspectiveCamera(10, window.innerWidth / window.innerHeight, 0.1, 80000);
@@ -22,11 +22,11 @@ window.onload = function() {
     });
     renderer.setPixelRatio(window.devicePixelRatio);
     renderer.setSize(window.innerWidth, window.innerHeight);
-    
-    document.body.appendChild(renderer.domElement);
-    
 
-    //draw lines from frequency magnitudes
+    document.body.appendChild(renderer.domElement);
+
+
+    // threejs color gradient line helper
     function getColoredBufferLine(steps, phase, geometry) {
 
         var vertices = geometry.vertices;
@@ -77,6 +77,7 @@ window.onload = function() {
 
     }
 
+    // threejs color gradient line helper
     function makeColorGradient(i, frequency, phase) {
 
         var center = 128;
@@ -100,6 +101,7 @@ window.onload = function() {
         return String(nybHexString.substr((n >> 4) & 0x0F, 1)) + nybHexString.substr(n & 0x0F, 1);
     }
 
+    // create geometry and add to scene
     function geo(arr) {
 
         var geometry = new THREE.Geometry();
@@ -114,14 +116,16 @@ window.onload = function() {
 
         }
 
+        // parameters for gradient
         var steps = 0.09;
         var phase = 1.7;
         var coloredLine = getColoredBufferLine(steps, phase, geometry);
-        coloredLine.position.set(0,-20,0);
+        coloredLine.position.set(0, -20, 0);
         scene.add(coloredLine);
 
     }
 
+    // trackballcontrols setup
     var controls = new THREE.TrackballControls(camera, renderer.domElement);
     controls.rotateSpeed = 5.0;
     controls.zoomSpeed = 3.2;
@@ -131,90 +135,86 @@ window.onload = function() {
     controls.staticMoving = false;
     controls.dynamicDampingFactor = 0.2;
 
-    function renderPhone(arr) {
-
+    function renderPage(arr) {
         geo(arr);
         renderer.render(scene, camera);
     }
 
-    controls.addEventListener('change', renderPhone);
+    controls.addEventListener('change', renderPage);
 
-    // frequencyBinCount tells you how many values you'll receive from the analyser
+    // analyzer return size
     var frequencyData = new Uint8Array(analyser.frequencyBinCount);
 
-    // we're ready to receive some data!
-    // loop
-
-    //visual options
-    //var colors = ["green","red","blue","yellow"];
+    // animation frame loop
     function renderFrame() {
         requestAnimationFrame(renderFrame);
         // update data in frequencyData
         analyser.getByteFrequencyData(frequencyData);
         // render frame based on values in frequencyData 
-        
+
 
         //threejs visualizations
         while (scene.children.length > 0) {
             scene.remove(scene.children[0]);
         }
-        renderPhone(frequencyData);
+        renderPage(frequencyData);
         controls.update();
-      
-      //custom audio controls
-      $("#timeStamp").html(Math.floor(audio.currentTime) + " / " + Math.floor(audio.duration) + "s");
-      
-     
+
+        // custom audio controls
+        $("#timeStamp").html(Math.floor(audio.currentTime) + " / " + Math.floor(audio.duration) + "s");
+
+
 
     }
+
+    // start program
     audio.play();
     renderFrame();
-  
-  
-  var state = 1;
-  $('.hamburger').click(function(){
-      $(this).toggleClass('is-active');
-      $("#drawer").toggleClass('open');
-    
-    });
-  
-  $("#play").click(function(){
-    $(this).css("display", "none");
-    $("#pause").css("display", "inline-block");
-    audio.play();
-  });
-  
-  $("#pause").click(function(){
-    $(this).css("display","none");
-    $("#play").css("display", "inline-block");
-    audio.pause();
-  });
-  
-  $("#time").change(function(){
-    audio.currentTime = (($("#time").val()/100)*(Math.floor(audio.duration)));
-  });
-  setInterval(function(){
-    $("#time").val((Math.floor(audio.currentTime)/Math.floor(audio.duration)) * 100);
-  }, 1000);
-  
-  $(".submit").click(function(){
-    var url = $("#songurl").val();
-  });
-  $("button[data-id=1]").click(function(){
-    $("audio").attr("src","https://cdn.glitch.com/ff820234-7fc5-4317-a00a-ad183b72978d%2Fmoonlight.mp3?1512000557559");
-    $("#name").html("Moonlight Sonata");
-    audio.play();
-  });
-  $("button[data-id=2]").click(function(){
-    $("audio").attr("src","https://cdn.glitch.com/9f19ab47-4e31-4e02-9445-d09d7e33a9a3%2FOut%20on%20the%20road.mp3?1512407277280");
-    $("#name").html("Out on the Road");
-    audio.play();
-  });
-  $("button[data-id=3]").click(function(){
-    $("audio").attr("src","https://cdn.glitch.com/9f19ab47-4e31-4e02-9445-d09d7e33a9a3%2FCrazy%20game%20.mp3?1512407412373");
-    $("#name").html("Crazy Game");
-    audio.play();
-  });
-  
-};
 
+    // frontend listeners
+    var state = 1;
+    $('.hamburger').click(function() {
+        $(this).toggleClass('is-active');
+        $("#drawer").toggleClass('open');
+
+    });
+
+    $("#play").click(function() {
+        $(this).css("display", "none");
+        $("#pause").css("display", "inline-block");
+        audio.play();
+    });
+
+    $("#pause").click(function() {
+        $(this).css("display", "none");
+        $("#play").css("display", "inline-block");
+        audio.pause();
+    });
+
+    $("#time").change(function() {
+        audio.currentTime = (($("#time").val() / 100) * (Math.floor(audio.duration)));
+    });
+    setInterval(function() {
+        $("#time").val((Math.floor(audio.currentTime) / Math.floor(audio.duration)) * 100);
+    }, 1000);
+
+    $(".submit").click(function() {
+        var url = $("#songurl").val();
+    });
+    $("button[data-id=1]").click(function() {
+        $("audio").attr("src", "https://cdn.glitch.com/ff820234-7fc5-4317-a00a-ad183b72978d%2Fmoonlight.mp3?1512000557559");
+        $("#name").html("Moonlight Sonata");
+        audio.play();
+    });
+    $("button[data-id=2]").click(function() {
+        $("audio").attr("src", "https://cdn.glitch.com/9f19ab47-4e31-4e02-9445-d09d7e33a9a3%2FOut%20on%20the%20road.mp3?1512407277280");
+        $("#name").html("Out on the Road");
+        audio.play();
+    });
+    $("button[data-id=3]").click(function() {
+        $("audio").attr("src", "https://cdn.glitch.com/9f19ab47-4e31-4e02-9445-d09d7e33a9a3%2FCrazy%20game%20.mp3?1512407412373");
+        $("#name").html("Crazy Game");
+        audio.play();
+    });
+
+};
