@@ -34,4 +34,4 @@ Three.js runs in all browsers supporting WebGL 2.0:
 
 Message or Email me for help and requests
 
-Made with [Glitch](glitch.com)
+Made with [Glitch](https://glitch.com)
