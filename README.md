@@ -1,22 +1,25 @@
-# three.js Audio Visualizer
+# Three.js Audio Visualizer
 
 An audio visualizer that utilizes the HTML5 Web Audio API as well as three.js to create a 3-Dimensional music player/visualizer
 
 
-
-## three.js Components
+### Three.js Components
 
 * WebGL Renderer
 * Perspective Camera
 * Trackball Controls
 
-## Other Resources
+### Other Resources
 
 * Material Design Lite - Front-End Web Framework
-  *
-* Hamburgers
+* Hamburgers - CSS-animated Hamburger Icons 
 
-## ← script.js
+### Browser Support
 
-If you're feeling fancy you can add interactivity to your site with Javascript
+Three.js runs in all browsers supporting WebGL 2.0:
+
+*Firefox 51 +
+*Internet Explorer
+*
+
 
