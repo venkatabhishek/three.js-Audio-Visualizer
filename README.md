@@ -16,10 +16,12 @@ An audio visualizer that utilizes the HTML5 Web Audio API as well as three.js to
 
 ### Browser Support
 
+WebGL 2.0 requires hardware with OpenGL ES 3.0 support or comparable desktop OpenGL feature support
+
 Three.js runs in all browsers supporting WebGL 2.0:
 
 *Firefox 51 +
-*Internet Explorer
-*
+*IE 11+ 
+*Chrome 59
 
 
